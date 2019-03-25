@@ -41,50 +41,50 @@ const styles = StyleSheet.create({
 });
 
 class WelcomeScreen extends PureComponent {
-
-  handleGetStartAction = (screenType) => {
-    Navigation.push(this.props.componentId, {
-      component: {
-        name: LOGIN_SCREEN,
-        passProps: {
-          screenType
-        },
-        options: {
-          topBar: {
-            title: {
-              text: 'LOGIN'
+    
+    handleGetStartAction = (screenType) => {
+        Navigation.push(this.props.componentId, {
+            component: {
+                name: LOGIN_SCREEN,
+                passProps: {
+                    screenType
+                },
+                options: {
+                    topBar: {
+                        title: {
+                            text: 'LOGIN'
+                        }
+                    }
+                }
             }
-          }
-        }
-      }
-    });
-  };
+        });
+    };
 
-  render() {
-    return (
-      <View style={styles.flex}>
-        <Image
-          style={styles.logo}
-          source={require('assets/images/logo.png')}
-        />
-        <SFProDisplayMedium style={styles.logoTitle}>
-          {'Welcome to RNN v2 Starter Kit!'}
-        </SFProDisplayMedium>
-        <Button
-          onPress={() => this.handleGetStartAction('Single')}
-          title={'Start Single Screen App'}
-          buttonStyle={styles.button}
-          titleStyle={styles.buttonTitle}
-        />
-        <Button
-          onPress={() => this.handleGetStartAction('Tab')}
-          title={'Start Tab Based App'}
-          buttonStyle={styles.button}
-          titleStyle={styles.buttonTitle}
-        />
-      </View>
-    );
-  }
+    render() {
+        return (
+          <View style={styles.flex}>
+            <Image
+              style={styles.logo}
+              source={require('assets/images/logo.png')}
+              />
+            <SFProDisplayMedium style={styles.logoTitle}>
+              {'Welcome to RNN v2 Starter Kit!'}
+            </SFProDisplayMedium>
+            <Button
+              onPress={() => this.handleGetStartAction('Single')}
+              title={'Start Single Screen App'}
+              buttonStyle={styles.button}
+              titleStyle={styles.buttonTitle}
+              />
+              <Button
+                onPress={() => this.handleGetStartAction('Tab')}
+                title={'Start Tab Based App'}
+                buttonStyle={styles.button}
+                titleStyle={styles.buttonTitle}
+                />
+          </View>
+        );
+    }
 }
 
 export default WelcomeScreen;
